@@ -115,4 +115,4 @@
         *)
             echo "Uso: $0 {gerar|visualizar|deletar|usar} {sbm|personal|todas}"
             ;;
-        esac
+        esac 
