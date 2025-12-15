@@ -1,7 +1,7 @@
 #!/bin/bash
     SSH_DIR="$HOME/.ssh"
     SBM_KEY="$SSH_DIR/id_ed25519_sbm"
-    PERSONAL_KEY="$SSH_DIR/id_ed25519_personal"
+    PERSONAL_KEY="$SSH_DIR/id_ed25519"
 
     generate_key() {
         local keyfile=$1
@@ -100,12 +100,16 @@
                 git config --global user.name "sbm-ocampagnoli"
                 git config --global user.email "otavio.campagnoli@sbmtechnology.com"
                 echo "Configuração do git para SBM aplicada."
+                eval "$(ssh-agent -s)"
+                ssh-add "$SBM_KEY"
                 ;;
             personal)
                 set_default_key "$PERSONAL_KEY"
                 git config --global user.name "Otavio Campagnoli"
                 git config --global user.email "otaviocampagnoli@hotmail.com"
                 echo "Configuração do git pessoal aplicada."
+                eval "$(ssh-agent -s)"
+                ssh-add "$PERSONAL_KEY"
                 ;;
             *)
                 echo "Opção inválida. Use: sbm ou personal."
