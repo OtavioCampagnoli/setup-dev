@@ -2,8 +2,8 @@
 
 This repository uses the SDD documents as the source of truth.
 
-- For frontend work, always follow [SDD-Frontend.md](../SDD-Frontend.md).
-- For backend work, always follow [SDD-Backend.md](../SDD-Backend.md).
+- For frontend work, always follow [SDD-Frontend.md](./SDD-Frontend.md).
+- For backend work, always follow [SDD-Backend.md](./SDD-Backend.md).
 - Treat `MUST` and `MUST NOT` as mandatory.
 - If a request is missing required implementation details, first identify the missing assumptions before coding.
 - Prefer incremental changes that preserve existing behavior unless the user explicitly asks for a refactor.
