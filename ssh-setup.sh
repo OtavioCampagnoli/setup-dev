@@ -31,13 +31,6 @@
         echo "Chave $keyfile removida."
     }
 
-    set_default_key() {
-        local keyfile=$1
-        ln -sf "$keyfile" "$SSH_DIR/id_ed25519"
-        ln -sf "$keyfile.pub" "$SSH_DIR/id_ed25519.pub"
-        echo "Chave $keyfile definida como padrão."
-    }
-
     case "$1" in
         gerar)
             case "$2" in
